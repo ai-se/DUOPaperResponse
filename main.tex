@@ -1,0 +1,301 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{times}
+\newenvironment{com}{\color{blue}\begin{itshape}}{\end{itshape}\vspace{1ex}}
+
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{2ex}
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in 
+%%\headheight 0.0in 
+\topmargin -0.6in 
+\textheight 9.2in 
+
+
+  
+\title{Manuscript \#EMSE-D-18-00347 -- Response to Reviewers}
+\author{Amritanshu Agrawal, Tim Menzies, Leandro L. Minku, Markus Wagner, Zhe Yu}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+We are most grateful to the Associate Editor and the anonymous reviewers for their constructive comments, which have helped to improve the quality of this paper significantly. In this response, the reviewers' comments were enumerated and are cited in blue italic, followed by our responses. We have also highlighted our modifications in the manuscript file using red to facilitate the editor's checking of our revisions. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Associate Editor}
+\label{sec:AE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{com}
+Based on the 3 reviews (2 * major revision, 1 reject), we recommended a ``Major Revision.''
+
+Special attention should be paid to:
+\begin{itemize}
+    \item Clarify how the paper evaluates the 1st claim
+    \item Discuss the SE community can make use of the 1st, 2nd, and 3rd claims
+    \item Tone down the 4th claim and/or add more data to support the claim
+\end{itemize}
+
+Please provide a detailed *point-by-point* response letter to identify how the reviewers' feedback has been addressed in the revision.
+\end{com}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Reviewer 1}
+\label{sec:Reviewer1}
+\renewcommand*{\theenumi}{1.\arabic{enumi}}
+\renewcommand*{\theenumii}{\theenumi.\arabic{enumii}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+\item \begin{com}This paper argues that there should be a new area of research in empirical software engineering research and practice where data mining and optimization should be combined and should assist each other for better and scalable outcome. The authors made four claims, (1) Optimization and data mining are very similar, (2) Optimizers can greatly improve data singers, (3) Data miners can greatly improve optimization and (4) Data mining without optimization should be deprecated.
+\end{com}
+
+\item \begin{com}
+The paper reads well and the claims were made based on the survey data they collected. I also fully agree with the first three claims. However, I have a concern on the fourth claim, Data mining without optimization should be deprecated. I don't  agree with this statement. MSR community has been exploring lots of novel ideas and insights from the Data without applying search based SE  or optimization if you say. These studies have been useful as we see as a community. I agree that exploiting optimization would make them only better. However, I don't really agree that they should be deprecated. They authors only surveyed a subset of data from a sea of knowledge in this area and made strong claims, in particular the last one. I think if one now finds a different sets of literature from the empirical software engineering area, they could make a completely opposite claim that with Optimizations, there have been much more achievements in the area of empirical software engineering
+or data mining. 
+\end{com}
+
+Initial thoughts: from Tim -- tone down claim 4 by replacing ``deprecated'' by ``recommended''. 
+
+%PS1: reviewer 1 hates claim 4, and reviewer 3 loves it :-)
+
+it may be worth clarifying here that we did not mean that all past MSR work should be thrown away! Reviewer 1 may have misinterpreted us. What we meant was that previous work can be improved by making use of optimization. If there are tools are available for that, then, it's worth building upon previous work based on such tools.
+
+\item \begin{com}
+While I was not fully happy with their conference submission, I even liked that one better than this version since that version provided some resources in these two areas. I was particularly happy that someone new in the area could be benefited from such resources. However, this extended version does not really add much. What is says we already know (the first three claims). Their support of data on those claims do not add much. As I noted, I could select another subset of data and draw some completely opposite claims. And for the fourth claim, I don't think they can even claim that with such a minimal set of data. Did they review the complete body of knowledge in empirical software engineering? 
+\end{com}
+
+With respect, we disagree that this work does not add much. Firstly, as mentioned in the paper, the SE communities
+exploring optimisation and data mining usually meet at seperate conferences and do not inter-mingle (see the SSBSE and MSR communities).
+
+Secondly, more things happen when you combine these methods than when you treat them separately. If optimizers are added
+to data miners then data miners need not be rigid only-seeking-one-goal algorithms (this is useful since business problems are multi-dimensional
+in nature where users want to satisfy many competing goals). 
+
+And if data miners are added to optimizers then optimizers can run much faster since they need not explore the whole space, just the critical bits found by the data miner. Also, data miners lets us generalize across the output of the optimizers (so instead of the optimizer reporting 1000 candidate solutions, the data miner can report what is true across all this solutions, as well as sub-regions ere those solutions are interestingly  different). 
+
+{\bf LEANDRO WRITES:}
+Initial thoughts: a key point here is how to select the data based upon which we can draw such conclusions (conclusions = claims 1-4). The previous paper was based on a set of articles collected based on our knowledge about the field, potentially having a strong bias. The new paper bases the claims on a systematic literature review, eliminating such strong bias. I believe that data collection and elimination of biases is one of the key aspects of empirical software engineering, given a discussion with previous ESEIW participants on the differences between data science for software engineering and empirical software engineering. The reviewer is likely to be from the MSR community and thus overlooked this important point.
+
+\item \begin{com}
+I would consider this paper if the authors tone down their claims and/or add more data to support the claims while they would need to judge papers of diverse areas in empirical software engineerings. 
+\end{com}
+
+\item \begin{com}
+The readability of the paper is also not very good. Most often the paper looks dense or busy. Even if someone just reads the abstract, it is hard to understand what do they really mean. I suggest that the authors do a careful job in writing and presentation of the findings. 
+\end{com}
+
+It seems that the reviewer changed his/her mind regarding the readability of our paper wrt his/her second comment :-) Anyway, we should be able to fix this.
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Reviewer 2}
+\label{sec:Reviewer2}
+\renewcommand*{\theenumi}{2.\arabic{enumi}}
+\renewcommand*{\theenumii}{\theenumi.\arabic{enumii}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+
+\item \begin{com}\# Summary: Data mining and optimization are very similar
+
+SE works should engage in optimization before publication.
+OPtimization of data-mining and optimization of parameters. Default
+parameters and no attempt to tease out proper performance of a learner
+should be avoided when one tries to make claims: Learner X doesn't
+work for SE problem Y.
+
+The authors describe methods of optimization and data mining, show
+their relationship, and the need for optimization in numerous avenues
+including hyper-parameter tuning. This is important because it melds 2
+SE communities closer together with some helpful tips.
+\end{com}
+
+\item \begin{com}
+\# Recommendation: Major Revision
+
+Why? I feel a lot of the discussion is lacking and the paper isn't
+clear enough for the average SE grad student to understand.
+\end{com}
+
+Again some comments about readability. We should be able to sort this out, and this reviewer also gives lots of hints on how to improve readability further down.
+
+\item \begin{com}
+\# Is the work different from the MSR paper?
+
+As a prior reviewer for the MSR paper this work is significantly
+different.
+\end{com}
+
+\item \begin{com}
+\# Fixes needed
+
+Can you address the issue of locally optimized versus say general
+performance? Should all our results be optimized or should we report
+the range of results?
+\end{com}
+
+Initial thoughts: good point. In several circumstances, it can be important to know the range of results, rather than only the optimized results. So, reporting both can be important. It would be good for us to have a discussion on that.
+
+\item \begin{com}
+Page 2 line 31 needed by [100] please make sure that citations are
+nouns and not parentheticals, it makes it hard to read. e.g. So\&So et
+al.[100] is better than [100] on its own.
+\end{com}
+
+\item \begin{com}
+Page 15 Figure 4 is an unreadable screenshot. Please steal that image
+better and cite the authors names DIRECTLY in the reference.
+\end{com}
+
+\item \begin{com}
+Why is the algorithm a figure. Figure 5. Why is it inline?
+It could be just text. This is weird. Please fix.
+\end{com}
+
+\item \begin{com}
+\# Clarity:
+
+The biggest barrier the original paper suffered from and that this
+paper faces is clarity. 2 communities are being involved so examples
+and clarifications across fields would be of value.
+
+* Define data-mining up front. You're using a subset of MSR work as
+  data-mining and it is not exactly what the boundaries of data mining
+  are.
+\end{com}
+
+\item \begin{com}
+* URL in table 2 should be an actual figure: \\
+  \url{https://raw.githubusercontent.com/txt/ase16/master/img/rankvscountvsdepth.png}
+\end{com}
+
+\item \begin{com}
+* Algorithm (1) the optimization needs to be clarified, the use of g'
+  and g'' when g and h were already availabled.
+  Give g' and g'' names. Not just purposes.
+\end{com}
+
+\item \begin{com}
+* Furthermore you define CONVEX optimization. This is SE, there's no
+  guarantees of convexity in many problems. So why limit the
+  definition to convex optimization? Many forms of Heuristic search are
+  heavily used in the rest of your paper and do not need convex optimization.
+  Line 10 on page 5 referring to convex optimization should be more specific.
+\end{com}
+
+\item \begin{com}
+* You are writing to readers of many fields. Using the term ``samplers"
+  for various forms of heuristic search either needs a clarification
+  point whereby you name some individuals, or you use terminology from
+  a particular field---such as search.
+\end{com}
+
+\item \begin{com}
+\# Missing discussion
+
+- Evaluation measures that are SE relevant. THings like cost and time
+  limits. We need to discuss that optimization should not be for
+  IR/ML performance measures but task performance (like cost).
+\end{com}
+
+\item \begin{com}
+\# A general gripe
+
+I felt like other search, less optimization based, cross-overs were being
+ ignored in favor of DUO. A lot of information and suggestions about priors
+ mined from existing software was kind of glossed over. There were 
+mentions in the paper but if you have time can you try to prop up the mining
+ leg as priors are often valuable.
+ \end{com}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Reviewer 3}
+\label{sec:Reviewer3}
+\renewcommand*{\theenumi}{3.\arabic{enumi}}
+\renewcommand*{\theenumii}{\theenumi.\arabic{enumii}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+
+\item \begin{com}Summary: The paper is about DUO: datamining using/used by optimizers. The authors argue that optimization and data mining go hand-in-hand and that every time some machine learning lago is used, there should be optimization. They have 4 claims in the paper. Some are supported by literature and one is argued logically. They also carry out a literature survey on the subject matter.
+\end{com}
+
+\item \begin{com}
+Review:
+
+I agree with the suthors that optimization must happen whenever ML algos/models are used in SE. Additionally, I like the literature review done by the authors. Table 1 and claim 4 (and partly 3) are very cool contributions.
+\end{com}
+
+\item \begin{com}
+
+However, I find a considerable portion of this work highly misplaced. Why is this paper at EMSE? What is the value of claim 1 for SE folks (practitioners and researchers)? I can see how claim 4 is useful. Letting us know that as researchers we should not be using ML models without optimizing for hyperparamenters. Let me present issues claim by claim.
+\end{com}
+
+Initial thoughts: regarding claim 1 -- can we argue that claim 1 is the foundation based upon which the other claims were built? One needs to know claim 1 to be able to contribute with claims 2-3, and perhaps also claim 4. 
+
+To me, claim 1 is also the minimum knowledge that a software engineer should have before applying DUO. They should not be applying something that they have no idea what it is, and claim 1 is necessary to enable software engineers to have at least some knowledge of what DUO is. I wonder if the reviewer could also accept this argument. And, our paper explains it concisely, rather than requiring software engineers to read a whole book on optimization and another one on data mining before being able to infer that themselves.
+
+Regarding EMSE, the paper is about the contributions that DUO can make to software engineering, and is based on a systematic literature review in the context of software engineering. Perhaps if we further improve our discussion on how our claims can benefit the software engineering community, we can address this comment?
+
+\item \begin{com}
+
+Claim 1: Optimization and data mining are very similar. Ask any core ML person and they would say all of it is nothing but optimization. In fact all ML theory people are essentially mathematicians who do optimization. Now I am not an ML theory person. And neither are any of the readers or reviewers of EMSE journal. So my questions are:
+
+a) How can we evaluate the claim? \\
+b) Is this a new finding? Have ML theory people not done this? Why present in a SE journal? \\
+c) What is the claims connection to SE? No motivation at all here for the required audience. 
+\end{com}
+
+Comment (not necessarily to be discussed in our response): ``Ask any core ML person and they would say all of it is nothing but optimization.'' Actually, this is not true. Optimisation people tend to think that ML is all about optimisation. Machine learning people tend not to agree with that, due to the need for generalization. The use of optimization is just the means to solve ML problems, given that we do not have knowledge about the true underlying distribution of the problem. The theory of ML is based on the need for generalization, which is not necessarily the case for optimization. So, optimization and ML are similar in terms of the solution to the problem, but they are not necessarily similar in terms of the problem that we are trying to tackle. Of course, when we start discussing the fact that the fitness functions of our optimization problems may be uncertain, then generalization also becomes important in optimization problems, which is something that the ML people don't usually realize. We need to double check if anyone has written a discussion about this in the literature.
+
+Initial thoughts: see previous reviewer comment.
+
+
+\item \begin{com}
+
+Claim 2: Optimizers can improve data mining. I like the fact that SE research is used to support this claim. I would like to know if there are any findings that are specific to SE data? I do learn that there are quite a few papers that do this. So what? What ways are data mining SE data being improved by optimizers. 
+\end{com}
+
+\item \begin{com}
+
+Claim 3: Data miners improve optimization. Similar to claim 1, is this a new finding? What is novel about this? Why should it be in SE journal?
+\end{com}
+
+\item \begin{com}
+
+Claim 4: I really like this claim. There is value for an SE audience. The two examples are excellent. 
+\end{com}
+
+\item \begin{com}
+
+Research direction: The first one is relevant to SE. The 2nd one (with 4 directions) are not SE related. I am not sure how or why these directions came from the result of this paper. Are these an exhaustive list? 
+\end{com}
+
+\item \begin{com}
+
+Overall, I think some parts of this paper can be taken and a good IEEE SW paper maybe written. But otherwise, there is not much research here for a paper in EMSE. This is just not the right audience to evaluate if the findings are novel, the proofs are correct (or if there are better proofs), and the results useful. 
+\end{com}
+
+\item \begin{com}
+
+Smaller issues:
+1) Table 1 showing more interest in 2018 in this topic might be a factor of the search space. All papers in 2017-18 were used, while only papers with a certain amount citations were considered from the past. Lose either the citations condition or the year condition. 
+\end{com}
+
+Initial thoughts: I agree, and I had actually raised this issue myself before we submitted our paper. We can't really deal with this issue apart from discussing the fact that indeed there is a risk that this perceived increase in the attention is due to the search space.
+\end{enumerate}
+
+
+
+\end{document}
